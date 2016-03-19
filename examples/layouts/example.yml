@@ -1,0 +1,8 @@
+name: example-layout
+endpoint: http://fleet-endpoint:49153
+cluster_name: example-cluster
+containers:
+  example-container:
+    image: gladcube/example-docker-image:v0.0.0
+
+

@@ -1,0 +1,27 @@
+{
+  "name": "glad-fleeter",
+  "version": "0.0.5",
+  "description": "Glad Fleeter",
+  "main": "index.js",
+  "bin": {
+    "glad-fleeter": "bin/glad-fleeter"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gladcube",
+  "license": "ISC",
+  "preferGlobal": true,
+  "dependencies": {
+    "async": "^1.5.2",
+    "cli-table": "^0.3.1",
+    "commander": "^2.9.0",
+    "minimist": "^1.2.0",
+    "moment": "^2.10.6",
+    "node-fleet-api": "0.0.4",
+    "readline-sync": "^1.2.21",
+    "restler": "^3.4.0",
+    "xml2js": "^0.4.15",
+    "yaml-js": "^0.1.3"
+  }
+}
