@@ -1,6 +1,6 @@
 require! <[https yaml-js fs]>
 {load, dump} = yaml-js
-config_file = "#{process.env.HOME or process.env.USERPROFILE}/.gladcube"
+config_file = "#{process.env.HOME or process.env.USERPROFILE}/.glad-fleeter"
 read-yml = fs.read-file-sync >> load
 write-yml = dump >> fs.write-file-sync config_file, _
 
@@ -20,11 +20,10 @@ module.exports = new class LoginManager
   need_to_be_logged_in:~ -> @config.required
   is_logged_in:~ -> not Obj.empty @auth
   auth:~
-    -> @config-file?.(\glad-fleeter)?.(\docker-auth) or {}
+    -> @config-file?.(\docker-auth) or {}
     (auth)->
-      unless @config-file? then @config-file = {}
-      unless @config-file.(\glad-fleeter)? then @config-file.(\glad-fleeter) = {}
-      @config-file.(\glad-fleeter).(\docker-auth) = auth
+      unless @config-file |> is-type \Object then @config-file = {}
+      @config-file.(\docker-auth) = auth
   read: ->
     try
       @config-file = read-yml config_file
