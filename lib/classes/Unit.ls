@@ -1,5 +1,4 @@
 require! \../services/login-manager.ls
-login-manager.read!
 
 module.exports = class DockerContainerServiceUnit
   ({@name, @config, @layout, @index})->

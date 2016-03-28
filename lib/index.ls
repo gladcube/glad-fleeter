@@ -8,7 +8,6 @@ module.exports =
   run: ->
     command-manager.read!
     command-manager.check!
-    login-manager.read!
     login-manager.check!
     options-manager.read!
     options-manager.check!
